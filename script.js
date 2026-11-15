@@ -66,11 +66,11 @@ const RES = {
 ["Résumer de cours", "ressources/ds/Déploiement et automatisation des modèles d'apprentissage (1).pdf", "Résumer", "local"] ,  
  ["Cloud_docker", "ressources/ds/cloud_docker_ihm_client.pdf", "Graphe cloud_docker.", "local"],
 ["Ressources vidéo", "ressources/ds/Fiche ressources vidéo · Module 17 Maouche Meriem.pdf", "Ressources supplémentaire", "local"],
-["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources supplémentaire", "local"],
+["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources supplémentaire", "local"]
 
     ],
     "Pratique": [
-      ["TP Pickle", "ressources/ds/Guide du stagiaire – TP Module 17 déployer un modèle de prédiction du prix des maisons.pdf", "TP.", "local"],
+      ["TP Pickle", "ressources/ds/Guide du stagiaire – TP Module 17 déployer un modèle de prédiction du prix des maisons.pdf", "TP.", "local"]
     ]
   },
   fs: {
@@ -93,11 +93,11 @@ const RES = {
   cy: {
     "Cours": [
       ["cours communication fr", "ressources/cy/MC5_Support_de_cours_detaille Maouche Meriem.pdf", " cours en français.", "local"],
-      ["cours communication ar", "MC5_Support_de_cours_AR Maouche Meriem.pdf", "cours en arabs", "local"],
+      ["cours communication ar", "ressources/cy/MC5_Support_de_cours_AR Maouche Meriem.pdf", "cours en arabs", "local"],
       ["cours cybersécurité", "ressources/cy/Cours_Fondamentaux_Cybersecurite_MC6.pptx", "cours power point.", "local"]],
     "Documentation": [
         ["Guide en cybersécurité", "ressources/cy/Fondamentaux_Cybersecurite_M.C.6 Maouche Meriem.pdf", "guide supplémentaire", "local"],
-      ["Résumer de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumer de cours communication", "web"],
+      ["Résumer de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumer de cours communication", "local"],
       
   ["CV – Karim Benali", "ressources/cy/01_CV_Karim_Benali.docx", "CV technicien SOC junior", "local"],
   ["Lettre de motivation", "ressources/cy/02_Lettre_de_motivation.docx", "Candidature poste technicien SOC junior", "local"],
@@ -109,7 +109,7 @@ const RES = {
   ["Compte-rendu de réunion", "ressources/cy/08_Compte_rendu_reunion.docx", "Point hebdomadaire sécurité 15/09/2026", "local"],
   ["Extrait charte informatique", "ressources/cy/09_Extrait_charte_informatique.docx", "Articles 3 et 5 – confidentialité et accès", "local"],
   ["Guide en cybersécurité", "ressources/cy/Fondamentaux_Cybersecurite_M.C.6 Maouche Meriem.pdf", "guide supplementaire", "local"],
-  ["Résumé de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumé de cours communication", "web"],
+  ["Résumé de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumé de cours communication", "local"]
 ],
     
     "Pratique": [
@@ -119,12 +119,12 @@ const RES = {
   },
   ia: {
     "Cours": [
-      ["cours ", "ressources/ia/Programmation_Procedurale_Algorithmique_C.pptx", "cours power point.", "local"],
+      ["cours ", "ressources/ia/Programmation_Procedurale_Algorithmique_C.pptx", "cours power point", "local"]
 
     ],
     "Documentation": [
          ["Guide en algorithmique et programmation en C", "ressources/ia/BTS Guide_Programmation_Procedurale_Algorithmique_C Maouche Meriem.pdf", "guide supplémentaire", "local"],
-          ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"],
+          ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"]
     ],
     "Pratique": [
 
@@ -134,6 +134,9 @@ const RES = {
 
 /* ---------- Utilitaires ---------- */
 const $ = id => document.getElementById(id);
+
+/* Encode chaque segment du chemin (espaces, accents, apostrophes, « · », « – »...) */
+const encodePath = p => p.split("/").map(encodeURIComponent).join("/");
 
 /* ---------- Onglets ---------- */
 const tabs = $("tabs");
@@ -194,7 +197,9 @@ function show(key) {
   const newsTitle = $("news-title");
   if (newsEl) {
     newsEl.innerHTML = d.news
-      .map(n => `<li><span class="date">${n[0]}</span><span class="sep">—</span>${n[1]}</li>`)
+      .map(n => n.length > 1
+        ? `<li><span class="date">${n[0]}</span><span class="sep">—</span>${n[1]}</li>`
+        : `<li>${n[0]}</li>`)
       .join("");
   }
   if (newsTitle) newsTitle.textContent = "— " + d.name;
@@ -238,11 +243,15 @@ function renderRes(key) {
       const icon = isLocal ? "📎" : "↗";
       const cls = isLocal ? "res-item local" : "res-item web";
       const label = isLocal ? "Fichier local" : "Lien web";
-      const downloadAttr = isLocal ? "download" : "";
+      const href = isLocal ? encodePath(url) : url;
+      const fileName = url.split("/").pop();
+      const linkAttrs = isLocal
+        ? `download="${fileName.replace(/"/g, "")}"`
+        : `target="_blank" rel="noopener noreferrer"`;
 
       return `
         <div class="${cls}">
-          <a href="${url}" target="_blank" rel="noopener noreferrer" ${downloadAttr}>
+          <a href="${href}" ${linkAttrs}>
             ${titre} <span class="ext">${icon}</span>
           </a>
           <p>
