@@ -274,3 +274,34 @@ function renderRes(key) {
 
 /* ---------- Démarrage ---------- */
 show("ds");
+
+/* ---------- Diagnostic : ouvrir le site avec ?check à la fin de l'adresse ---------- */
+if (location.search.includes("check")) {
+  const panel = document.createElement("div");
+  panel.style.cssText = "position:fixed;inset:10px;z-index:9999;overflow:auto;background:#fff;color:#000;border:3px solid #1f5fbf;border-radius:12px;padding:16px;font:14px/1.5 monospace";
+  panel.innerHTML = "<h3>Diagnostic des ressources…</h3>";
+  document.body.appendChild(panel);
+
+  (async () => {
+    let ko = 0;
+    for (const [spec, cats] of Object.entries(RES)) {
+      for (const [cat, items] of Object.entries(cats)) {
+        for (const [titre, url, , type] of items) {
+          if (type !== "local") continue;
+          let ok = false, info = "";
+          try {
+            const r = await fetch(encodePath(url), { method: "HEAD", cache: "no-store" });
+            ok = r.ok; info = r.status;
+          } catch (e) { info = "erreur réseau"; }
+          if (!ok) ko++;
+          const line = document.createElement("div");
+          line.style.color = ok ? "green" : "red";
+          line.textContent = (ok ? "✔ " : "✘ ") + info + "  " + url;
+          panel.appendChild(line);
+        }
+      }
+    }
+    const h = panel.querySelector("h3");
+    h.textContent = ko ? `${ko} fichier(s) introuvable(s) (en rouge)` : "Tous les fichiers sont accessibles ✔";
+  })();
+}
