@@ -97,8 +97,21 @@ const RES = {
       ["cours cybersécurité", "ressources/cy/Cours_Fondamentaux_Cybersecurite_MC6.pptx", "cours power point.", "local"]],
     "Documentation": [
         ["Guide en cybersécurité", "ressources/cy/Fondamentaux_Cybersecurite_M.C.6 Maouche Meriem.pdf", "guide sumplimentaire", "local"],
-      ["Résumer de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumer de cours communication", "web"]
-    ],
+      ["Résumer de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumer de cours communication", "web"],
+      
+  ["CV – Karim Benali", "ressources/cy/01_CV_Karim_Benali.docx", "CV technicien SOC junior", "local"],
+  ["Lettre de motivation", "ressources/cy/02_Lettre_de_motivation.docx", "Candidature poste technicien SOC junior", "local"],
+  ["Pitch de présentation 30s", "ressources/cy/03_Pitch_de_presentation_30s.docx", "Discours de présentation et structure", "local"],
+  ["Simulation d'entretien d'embauche", "ressources/cy/04_Simulation_entretien_embauche.docx", "Questions/réponses et conseils entretien", "local"],
+  ["Message de remerciement", "ressources/cy/05_Message_de_remerciement.docx", "Modèle de remerciement post-entretien", "local"],
+  ["Note de service – Mots de passe", "ressources/cy/06_Note_de_service.docx", "Politique de mots de passe obligatoire", "local"],
+  ["Rapport d'incident de sécurité", "ressources/cy/07_Rapport_incident.docx", "Rapport tentative d'intrusion 12/09/2026", "local"],
+  ["Compte-rendu de réunion", "ressources/cy/08_Compte_rendu_reunion.docx", "Point hebdomadaire sécurité 15/09/2026", "local"],
+  ["Extrait charte informatique", "ressources/cy/09_Extrait_charte_informatique.docx", "Articles 3 et 5 – confidentialité et accès", "local"],
+  ["Guide en cybersécurité", "ressources/cy/Fondamentaux_Cybersecurite_M.C.6 Maouche Meriem.pdf", "guide supplementaire", "local"],
+  ["Résumé de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumé de cours communication", "web"],
+],
+    
     "Pratique": [
       
       
