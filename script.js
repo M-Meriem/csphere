@@ -58,15 +58,15 @@ const DATA = {
 const RES = {
   ds: {
     "Cours": [
-     ["Cours ", "ressources/ds/m17 cour.pptx", "Support de cours complet .", "local"]
+     ["Cours ", "ressources/ds/m17 cour.pptx", "Support de cours complet ", "local"]
     ],
     "Documentation": [
       ["Guide API / HTTP", "ressources/ds/Guide_API_Maouche_Meriem.pdf", "Explication des API et méthodes HTTP", "local"],
       ["Guide Arab", "ressources/ds/m17_explication_simplifiee.pdf", "Explication en Arab de cours.", "local"],
-["Résumer de cours", "ressources/ds/Déploiement et automatisation des modèles d'apprentissage (1).pdf", "Explication en Arab de cours.", "local"] ,  
+["Résumer de cours", "ressources/ds/Déploiement et automatisation des modèles d'apprentissage (1).pdf", "Résumer", "local"] ,  
  ["Cloud_docker", "ressources/ds/cloud_docker_ihm_client.pdf", "Graphe cloud_docker.", "local"],
-["Ressources vidéo", "ressources/ds/Fiche ressources vidéo · Module 17 Maouche Meriem.pdf", "Ressources suplimentaires.", "local"],
-["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources suplimentaires.", "local"],
+["Ressources vidéo", "ressources/ds/Fiche ressources vidéo · Module 17 Maouche Meriem.pdf", "Ressources supplémentaire", "local"],
+["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources supplémentaire", "local"],
 
     ],
     "Pratique": [
@@ -96,7 +96,7 @@ const RES = {
       ["cours communication ar", "MC5_Support_de_cours_AR Maouche Meriem.pdf", "cours en arabs", "local"],
       ["cours cybersécurité", "ressources/cy/Cours_Fondamentaux_Cybersecurite_MC6.pptx", "cours power point.", "local"]],
     "Documentation": [
-        ["Guide en cybersécurité", "ressources/cy/Fondamentaux_Cybersecurite_M.C.6 Maouche Meriem.pdf", "guide sumplimentaire", "local"],
+        ["Guide en cybersécurité", "ressources/cy/Fondamentaux_Cybersecurite_M.C.6 Maouche Meriem.pdf", "guide supplémentaire", "local"],
       ["Résumer de cours communication", "ressources/cy/Schemas_Communication_Professionnelle.pdf", "Résumer de cours communication", "web"],
       
   ["CV – Karim Benali", "ressources/cy/01_CV_Karim_Benali.docx", "CV technicien SOC junior", "local"],
@@ -123,7 +123,7 @@ const RES = {
 
     ],
     "Documentation": [
-         ["Guide en algorithmique et programmation en C", "ressources/ia/BTS Guide_Programmation_Procedurale_Algorithmique_C Maouche Meriem.pdf", "guide sumplimentaire", "local"],
+         ["Guide en algorithmique et programmation en C", "ressources/ia/BTS Guide_Programmation_Procedurale_Algorithmique_C Maouche Meriem.pdf", "guide supplémentaire", "local"],
           ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"],
     ],
     "Pratique": [
