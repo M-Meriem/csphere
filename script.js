@@ -148,32 +148,26 @@ Object.entries(DATA).forEach(([key, v]) => {
   tabs.appendChild(b);
 });
 
-/* ---------- Mise à jour du logo ---------- */
+/* ---------- Logo (toujours logo.png, emoji en secours) ---------- */
 function updateLogo(d) {
   const logoEl = $("logo");
   if (!logoEl) return;
 
   let img = logoEl.querySelector("img");
-
-  // Si l'image n'existe plus (fallback emoji), on la recrée
   if (!img) {
     img = document.createElement("img");
     img.id = "logo-img";
     img.alt = "Logo CSphere";
     img.onerror = () => {
-      img.style.display = "none";
+      img.remove();
       logoEl.textContent = "💻";
     };
     logoEl.textContent = "";
     logoEl.appendChild(img);
   }
 
-  const src = d.logo || "ressources/logo.png";
-  img.src = src;
-  img.alt = d.name ? "Logo " + d.name : "Logo CSphere";
-  img.style.display = "";
+  if (!img.getAttribute("src")) img.src = "ressources/logo.png";
 }
-
 /* ---------- Affichage d'une spécialité ---------- */
 function show(key) {
   const d = DATA[key];
