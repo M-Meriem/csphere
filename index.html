@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f5fbf">
+<title>CSphere </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo" id="logo">
+    <img id="logo-img" src="ressources/logo.png" alt="Logo CSphere"
+         onerror="this.style.display='none'; this.parentElement.textContent='💻';">
+  </div>
+  <div class="header-text">
+    <h1>CSphere | L'informatique, le savoir et le partage</h1>
+    <small>Mme Maouche Meriem</small>
+    <small>Centre d'Excellence pour l'Économie numérique</small>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <a href="#accueil">Accueil</a>
+  <a href="#specialites">Spécialités</a>
+  <a href="#ressources">Ressources</a>
+  <a href="#annonces">Annonces</a>
+</nav>
+
+<main>
+
+  <section id="accueil" class="section">
+    <h2>À propos</h2>
+    <p>
+      Bienvenue sur <strong>CSphere</strong>, un espace dédié à l'apprentissage, à la découverte et au partage
+      des connaissances dans le domaine des sciences informatiques.
+    </p>
+    <p>
+      Cette page est née d'une conviction profonde : le savoir prend davantage de valeur lorsqu'il est partagé.
+    </p>
+    <p>
+      En tant qu'enseignante en informatique et ingénieure d'État en informatique, j'ai souhaité créer cet
+      espace afin d'accompagner les étudiants et les passionnés dans leur parcours d'apprentissage, en mettant
+      à leur disposition des ressources pédagogiques structurées, accessibles et enrichissantes.
+    </p>
+
+    <h2>Nos objectifs</h2>
+    <ul>
+      <li>Proposer des cours, des résumés et des supports pédagogiques organisés par spécialité.</li>
+      <li>Faciliter la compréhension des concepts fondamentaux de l'informatique.</li>
+      <li>Partager des exercices pratiques, des exemples corrigés et des ressources complémentaires.</li>
+      <li>Encourager l'autonomie, la curiosité scientifique et l'esprit d'analyse.</li>
+      <li>Accompagner les étudiants dans le développement de leurs compétences académiques et professionnelles.</li>
+    </ul>
+
+    <h2>Notre vision</h2>
+    <p>Faire de CSphere un espace de référence pour apprendre, comprendre, pratiquer et évoluer dans les différentes disciplines de l'informatique.</p>
+
+    <h2>Notre engagement</h2>
+    <p>Derrière chaque publication se trouvent du temps, de la recherche, de la préparation et une volonté sincère de transmettre.</p>
+    <p>Chaque ressource partagée est le fruit d'un engagement pédagogique visant à rendre le savoir plus accessible et à contribuer, à notre échelle, à la réussite des étudiants.</p>
+    <p class="highlight">
+      Apprendre, comprendre, pratiquer et partager : telle est l'essence de CSphere.<br>
+      Parce que transmettre le savoir, c'est aussi contribuer à construire les compétences de demain.
+    </p>
+  </section>
+
+  <section id="specialites" class="section">
+    <h2>Choisir une spécialité</h2>
+    <div class="tabs" id="tabs" role="tablist"></div>
+
+    <div class="card" id="desc"></div>
+
+    <div class="card">
+      <h3 class="card-title">💼 Métiers visés</h3>
+      <ul id="jobs" class="jobs-list"></ul>
+    </div>
+  </section>
+
+  <section id="ressources" class="section">
+    <h2>Ressources <small id="res-title" class="muted"></small></h2>
+    <p class="muted">Cliquez sur une catégorie pour afficher les ressources.</p>
+    <div id="res"></div>
+  </section>
+
+  <section id="annonces" class="section">
+    <h2>Annonces <small id="news-title" class="muted"></small></h2>
+    <div class="card">
+      <ul id="news" class="news-list"></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-quote">
+    « Mon objectif n'est pas seulement d'enseigner l'informatique, mais de rendre le savoir accessible,
+    de développer les compétences et de donner à chaque étudiant les moyens de progresser. »
+  </p>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61590447193237&locale=fr_FR"
+       target="_blank" rel="noopener noreferrer" aria-label="Facebook CSphere" title="Facebook">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/>
+      </svg>
+      <span>Facebook</span>
+    </a>
+
+    <a href="https://www.instagram.com/csphere_meriem/?hl=fr"
+       target="_blank" rel="noopener noreferrer" aria-label="Instagram CSphere" title="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      <span>Instagram</span>
+    </a>
+  </div>
+
+  <p class="footer-copy">© 2026 CSphere — Mme Maouche Meriem</p>
+</footer> 
+<script src="script.js"></script>
+</body>
+</html>
