@@ -166,7 +166,7 @@ function updateLogo(d) {
     logoEl.appendChild(img);
   }
 
-  if (!img.getAttribute("src")) img.src = "ressources/logo.png";
+  if (!img.getAttribute("src")) img.src = "logo.png";
 }
 /* ---------- Affichage d'une spécialité ---------- */
 function show(key) {
