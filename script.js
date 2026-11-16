@@ -91,7 +91,8 @@ const RES = {
 ["Parcour data scientist", "ressources/ds/data.jpg", "Parcour data scientist", "local"],
     ],
     "Pratique": [
-      ["TP Pickle", "ressources/ds/Guide du stagiaire – TP Module 17 déployer un modèle de prédiction du prix des maisons.pdf", "TP.", "local"]
+      ["TP Pickle", "ressources/ds/Guide du stagiaire – TP Module 17 déployer un modèle de prédiction du prix des maisons.pdf", "TP.", "local"],
+       ["Sujet test", "ressources/ds/Evaluation_Module17_Projets_DataScientist.pdf", "Sujet test", "local"],
     ]
   },
   fs: {
@@ -108,7 +109,8 @@ const RES = {
     ],
     "Pratique": [
       ["Frontend Mentor", "https://www.frontendmentor.io/", "Défis de développement front-end.", "web"],
-      ["TP API REST (PDF)", "ressources/fs/tp-api-rest.pdf", "Énoncé complet du TP Express.", "local"]
+      ["TP API REST (PDF)", "ressources/fs/tp-api-rest.pdf", "Énoncé complet du TP Express.", "local"],
+      
     ]
   },
   cy: {
@@ -147,7 +149,7 @@ const RES = {
     "Documentation": [
          ["Guide en algorithmique et programmation en C", "ressources/ia/BTS Guide_Programmation_Procedurale_Algorithmique_C Maouche Meriem.pdf", "guide supplémentaire", "local"],
           ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"],
-
+  ["Algolabindex ", "ressources/ia/index.html", "site pour tester algorithme", "local"],
     ],
     "Pratique": [
  [" Série des exercices en Algo et C ", "ressources/ia/Série d'exercices Programmation procédurale en langage C.pdf", "série des exercices en Algo et C", "local"]
