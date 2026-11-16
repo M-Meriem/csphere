@@ -76,8 +76,9 @@ const RES = {
 ["Résumer de cours", "ressources/ds/Déploiement et automatisation des modèles d'apprentissage (1).pdf", "Résumer", "local"] ,  
  ["Cloud_docker", "ressources/ds/cloud_docker_ihm_client.pdf", "Graphe cloud_docker.", "local"],
 ["Ressources vidéo", "ressources/ds/Fiche ressources vidéo · Module 17 Maouche Meriem.pdf", "Ressources supplémentaire", "local"],
-["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources supplémentaire", "local"]
-
+["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources supplémentaire", "local"],
+["ML méthodes", "ressources/ds/ML Maouche Meriem.jfif", "Ressources supplémentaire ML méthodes", "local"],
+["ML méthodes", "ressources/ds/data.jpg", "Parcour data scientist", "local"],
     ],
     "Pratique": [
       ["TP Pickle", "ressources/ds/Guide du stagiaire – TP Module 17 déployer un modèle de prédiction du prix des maisons.pdf", "TP.", "local"]
@@ -134,7 +135,8 @@ const RES = {
     ],
     "Documentation": [
          ["Guide en algorithmique et programmation en C", "ressources/ia/BTS Guide_Programmation_Procedurale_Algorithmique_C Maouche Meriem.pdf", "guide supplémentaire", "local"],
-          ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"]
+          ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"],
+
     ],
     "Pratique": [
  [" Série des exercices en Algo et C ", "ressources/ia/Série d'exercices Programmation procédurale en langage C.pdf", "série des exercices en Algo et C", "local"]
