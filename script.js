@@ -47,7 +47,17 @@ const DATA = {
       ["Date du test : 23-11-2026,Heure : 13h,Observations : QCM / Questions libres"],
 
     ]
-  }
+  },
+    en: {
+    name: "Encadrement & Accompagnement",
+    icon: "🎓",
+    logo: "ressources/en-logo.png",
+    desc: "L'encadrement est un espace d'accompagnement, de partage et de transmission des connaissances. Il vise à guider les étudiants dans leurs parcours académiques et leurs projets pratiques, en les aidant à développer leurs compétences techniques, leur esprit d'analyse et leur autonomie.À travers un accompagnement personnalisé, je les encourage à transformer leurs idées en réalisations concrètes et à relever les défis du monde numérique et technologique.",
+    jobs: ["BTS "],
+    news: [
+      ["Date  : 16-11-2026 : Début des encadrement"]
+          ]
+  },
 };
 
 /* ---------- Ressources par spécialité ----------
@@ -127,7 +137,21 @@ const RES = {
           ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"]
     ],
     "Pratique": [
-
+ [" Série des exercices en Algo et C ", "ressources/ia/Série d'exercices Programmation procédurale en langage C.pdf", "série des exercices en Algo et C", "local"]
+    ],
+    
+  },
+   en: {
+    "Cours": [
+     
+    ],
+    "Documentation": [
+      ["Guide redaction memoire_BTS", "ressources/en/Guide_Redaction_Memoire_BTS Mme Maouche Meriem.pdf", "Guide redaction memoire_BTS", "local"],
+    ["Guide redaction memoire_BTS Arab ", "ressources/en/Guide_Redaction_Memoire_BTS_Arabe.pdf", "Guide redaction memoire_BTS Arab", "local"],
+    ["Template Memoire BTS", "ressources/en/Template_Memoire_BTS Maouche Meriem.docx", "Template_Memoire_BTS Maouche Meriem", "local"],
+    ],
+    "Pratique": [
+      
     ]
   }
 };
