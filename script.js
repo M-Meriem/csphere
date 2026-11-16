@@ -78,7 +78,7 @@ const RES = {
 ["Ressources vidéo", "ressources/ds/Fiche ressources vidéo · Module 17 Maouche Meriem.pdf", "Ressources supplémentaire", "local"],
 ["Load Balancer, Registry d'images, Stockage persistant", "ressources/ds/load_balancer_registry_stockage.pdf", "Ressources supplémentaire", "local"],
 ["ML méthodes", "ressources/ds/ML Maouche Meriem.jfif", "Ressources supplémentaire ML méthodes", "local"],
-["ML méthodes", "ressources/ds/data.jpg", "Parcour data scientist", "local"],
+["Parcour data scientist", "ressources/ds/data.jpg", "Parcour data scientist", "local"],
     ],
     "Pratique": [
       ["TP Pickle", "ressources/ds/Guide du stagiaire – TP Module 17 déployer un modèle de prédiction du prix des maisons.pdf", "TP.", "local"]
