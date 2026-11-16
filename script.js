@@ -135,6 +135,7 @@ const RES = {
     
     "Pratique": [
       
+      ["Travaux_de_groupe_Cybersecurite", "ressources/cy/Travaux_de_groupe_Cybersecurite.pdf", "Sujet de test", "local"],
       
     ]
   },
