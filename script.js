@@ -48,6 +48,16 @@ const DATA = {
 
     ]
   },
+  
+  cm: {
+    name: "Cloud Computing",
+    icon: "☁️",
+    logo: "cm-logo.avif",
+    desc: "Le cloud computing (ou informatique en nuage) désigne la fourniture à la demande de ressources informatiques (serveurs, stockage, bases de données, réseaux, logiciels) via Internet, sur un modèle de paiement à l'usage",
+    jobs: ["Ingénieur cloud",  "Chercheur en cloud"],
+    news: [
+         ]
+  },
     en: {
     name: "Encadrement & Accompagnement",
     icon: "🎓",
@@ -143,6 +153,19 @@ const RES = {
     ],
     
   },
+     cm: {
+    "Cours": [
+      
+
+    ],
+    "Documentation": [
+         
+    ],
+    "Pratique": [
+ 
+    ],
+    
+  },
    en: {
     "Cours": [
      
@@ -155,7 +178,8 @@ const RES = {
     "Pratique": [
       
     ]
-  }
+  },
+
 };
 
 /* ---------- Utilitaires ---------- */
