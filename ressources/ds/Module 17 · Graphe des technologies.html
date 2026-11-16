@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Module 17 · Graphe des technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f4f6f9;--card:#fff;--ink:#14213d;--mut:#55627a;--line:#c9d1df;--accent:#e8590c;
+--c1:#1d6fa5;--c2:#0b8a6f;--c3:#7a4fc2;--c4:#c2410c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1624;--card:#18223a;--ink:#e8edf7;--mut:#9aa7c0;--line:#3a4a6b;--accent:#ff8a3d;--c1:#5bb0e6;--c2:#4cc9a7;--c3:#b59af0;--c4:#ff9b66;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1624;--card:#18223a;--ink:#e8edf7;--mut:#9aa7c0;--line:#3a4a6b;--accent:#ff8a3d;--c1:#5bb0e6;--c2:#4cc9a7;--c3:#b59af0;--c4:#ff9b66;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.45}
+.wrap{max-width:1300px;margin:0 auto;padding:24px 18px 32px}
+.kick{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{margin:4px 0 4px;font-size:clamp(20px,3vw,30px);line-height:1.15}
+.sub{color:var(--mut);font-size:14px;margin:0 0 14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+svg{display:block;min-width:900px;width:100%;height:auto}
+.band{fill:var(--c);opacity:.07}
+.bh{fill:var(--c);font-size:13px;font-weight:700;letter-spacing:.04em}
+.node rect{fill:var(--card);stroke:var(--c);stroke-width:1.6}
+.node .strip{fill:var(--c);stroke:none}
+.node text.t{fill:var(--ink);font-size:14px;font-weight:700}
+.node text.s{fill:var(--mut);font-size:11px}
+.node{cursor:pointer;transition:opacity .15s}
+.edge path{fill:none;stroke:var(--mut);stroke-width:1.8}
+.edge.dash path{stroke:var(--accent);stroke-dasharray:6 5;stroke-width:2}
+.edge text{fill:var(--ink);font-size:11px;font-weight:500;paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+.edge{transition:opacity .15s}
+.dim{opacity:.13}
+.hl path{stroke:var(--accent);stroke-width:2.6}
+#info{margin-top:12px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:10px 14px;font-size:14px;min-height:48px}
+#info b{color:var(--accent)}
+.leg{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12.5px;color:var(--mut)}
+.leg i{display:inline-block;width:26px;height:0;border-top:2px solid var(--mut);vertical-align:middle;margin-right:6px}
+.leg i.d{border-top:2px dashed var(--accent)}
+@media print{@page{size:A3 landscape;margin:10mm}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kick">Module 17 · MLOps, API, Cloud</div>
+  <h1>Graphe des technologies : comment elles s'enchaînent</h1>
+  <p class="sub">Chaque nœud est une technologie du cours, chaque flèche une relation. Survolez ou touchez un nœud pour voir son rôle et ses liens.</p>
+  <div class="box"><svg id="g" viewBox="0 0 1240 750" role="img" aria-label="Graphe reliant les technologies du module 17">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--mut)"/></marker>
+    <marker id="ard" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+    <g id="bands"></g><g id="edges"></g><g id="nodes"></g>
+  </svg></div>
+  <div id="info"><b>Astuce :</b> cliquez sur un nœud pour lire son rôle dans le cours.</div>
+  <div class="leg"><span><i></i>flux de travail</span><span><i class="d"></i>boucle de retour : réentraîner</span></div>
+</div>
+<script>
+var NS="http://www.w3.org/2000/svg";
+var P=[{x:10,w:290,c:"--c1",t:"17.1 · PRÉPARER LE MODÈLE"},{x:310,w:280,c:"--c2",t:"17.2 · CRÉER UNE API"},{x:600,w:290,c:"--c3",t:"17.3 · AUTOMATISER"},{x:900,w:300,c:"--c4",t:"17.4 · DÉPLOYER SUR LE CLOUD"}];
+var N=[
+["sk",155,150,0,"scikit-learn","Modèle de régression","Bibliothèque qui fournit le modèle de régression linéaire entraîné sur surface et prix."],
+["jl",155,290,0,"Joblib · pickle","Sérialisation","Sauvegarde et recharge un modèle entraîné ; joblib est plus rapide que pickle pour les gros tableaux numériques."],
+["dvc",155,430,0,"DVC","Versionnage","Applique Git aux gros fichiers (données, modèles) : Git garde une référence, les données sont stockées ailleurs."],
+["env",155,570,0,"virtualenv · conda","Environnement isolé","Crée un espace Python propre à chaque projet pour éviter les conflits de versions."],
+["req",155,670,0,"requirements.txt","Versions figées","Liste des bibliothèques avec leur version exacte (pip freeze) pour reproduire l'environnement."],
+["api",450,290,1,"FastAPI · Flask","API REST · uvicorn","Expose le modèle par HTTP : GET /health et POST /predict. FastAPI valide automatiquement les données reçues."],
+["cli",450,430,1,"Client HTTP","Requête / réponse JSON","Envoie un JSON (ex. surface = 80) et reçoit la prédiction. Codes : 200 succès, 400 requête incorrecte, 404 introuvable, 500 erreur serveur."],
+["ml",745,150,2,"MLflow","Suivi des expériences","Enregistre paramètres, métriques (MAE, R²) et modèle à chaque entraînement pour comparer les essais."],
+["dk",745,290,2,"Docker","Conteneur de l'API","Empaquette l'API, le modèle et les dépendances : fonctionne partout de la même façon, plus léger qu'une machine virtuelle."],
+["gh",745,430,2,"GitHub Actions","CI/CD à chaque push","Exécute automatiquement les tests et le build de l'image à chaque git push."],
+["mon",1050,150,3,"Surveillance","Logs, métriques, alertes","CloudWatch, Azure Monitor, Cloud Monitoring. Surveille l'API (latence, erreurs) et la qualité des prédictions."],
+["reg",1050,290,3,"Registre d'images","ECR · ACR · Artifact","Stocke l'image Docker avant son exécution (ECR, Azure Container Registry, Artifact Registry ou Docker Hub)."],
+["run",1050,430,3,"Cloud Run","ou ECS, Container Apps","Exécute l'image et fournit une adresse HTTPS publique ; ajoute ou retire des instances selon la charge (scalabilité horizontale)."],
+["usr",1050,570,3,"Utilisateurs","Appel HTTPS de /predict","Sites et applications qui appellent l'API. Sécurité : secrets en variables d'environnement, authentification, droits minimaux (IAM)."]];
+var E=[
+["sk","jl","M155,176 V264","sérialise",165,222,"start"],
+["jl","dvc","M155,316 V404","versionne",165,362,"start"],
+["env","req","M155,596 V644","pip freeze",165,624,"start"],
+["jl","api","M235,290 H370","joblib.load",302,281,"middle"],
+["sk","ml","M235,150 H665","log_param · log_metric · log_model",450,142,"middle"],
+["cli","api","M450,404 V316","POST /predict",460,362,"start"],
+["api","dk","M530,290 H665","conteneurise",597,281,"middle"],
+["req","dk","M235,670 H640 V290 H665","pip install",430,662,"middle"],
+["gh","dk","M745,404 V316","docker build · pytest",755,362,"start"],
+["dk","reg","M825,290 H970","docker push",897,281,"middle"],
+["reg","run","M1050,316 V404","exécute l'image",1060,362,"start"],
+["run","usr","M1050,456 V544","expose en HTTPS",1060,500,"start"],
+["run","mon","M1130,430 C1182,430 1182,150 1130,150","logs · métriques · alertes",1196,290,"middle",1],
+["mon","sk","M1050,124 V88 H155 V124","réentraîner avec les résultats observés",600,80,"middle",1,1]];
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||document.getElementById("g")).appendChild(e);return e}
+P.forEach(function(p){var g=document.getElementById("bands");
+ el("rect",{x:p.x,y:10,width:p.w,height:728,rx:12,class:"band",style:"--c:var("+p.c+")"},g);
+ var t=el("text",{x:p.x+p.w/2,y:34,"text-anchor":"middle",class:"bh",style:"--c:var("+p.c+")"},g);t.textContent=p.t});
+var eg=document.getElementById("edges"),ng=document.getElementById("nodes"),EL=[],NL={};
+E.forEach(function(e,i){var g=el("g",{class:"edge"+(e[8]?" dash":"")},eg);
+ el("path",{d:e[2],"marker-end":"url(#"+(e[8]?"ard":"ar")+")"},g);
+ var t=el("text",{x:e[4],y:e[5],"text-anchor":e[6]},g);t.textContent=e[3];
+ if(e[7]===1&&!e[8])t.setAttribute("transform","rotate(90 "+e[4]+" "+e[5]+")");
+ EL.push({g:g,a:e[0],b:e[1]})});
+var info=document.getElementById("info");
+N.forEach(function(n){var g=el("g",{class:"node",style:"--c:var("+P[n[3]].c+")",tabindex:0,role:"button"},ng);
+ el("rect",{x:n[1]-80,y:n[2]-26,width:160,height:52,rx:8},g);
+ el("rect",{x:n[1]-80,y:n[2]-26,width:7,height:52,rx:3,class:"strip"},g);
+ var t=el("text",{x:n[1]-66,y:n[2]-4,class:"t"},g);t.textContent=n[4];
+ var s=el("text",{x:n[1]-66,y:n[2]+14,class:"s"},g);s.textContent=n[5];
+ NL[n[0]]={g:g,d:n};
+ function on(){var c={};c[n[0]]=1;EL.forEach(function(e){var h=e.a===n[0]||e.b===n[0];e.g.classList.toggle("dim",!h);e.g.classList.toggle("hl",h);if(h){c[e.a]=1;c[e.b]=1}});
+  for(var k in NL)NL[k].g.classList.toggle("dim",!c[k]);
+  info.innerHTML="<b>"+n[4]+"</b> · "+n[6]}
+ function off(){EL.forEach(function(e){e.g.classList.remove("dim","hl")});for(var k in NL)NL[k].g.classList.remove("dim")}
+ g.addEventListener("mouseenter",on);g.addEventListener("mouseleave",off);g.addEventListener("focus",on);g.addEventListener("blur",off);g.addEventListener("click",on)});
+</script>
+</body>
+</html>
