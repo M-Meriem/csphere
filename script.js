@@ -174,8 +174,8 @@ const RES = {
      
     ],
     "Documentation": [
-      ["Guide redaction memoire_BTS", "ressources/en/Guide_Redaction_Memoire_BTS Mme Maouche Meriem.pdf", "Guide redaction memoire_BTS", "local"],
-    ["Guide redaction memoire_BTS Arab ", "ressources/en/Guide_Redaction_Memoire_BTS_Arabe.pdf", "Guide redaction memoire_BTS Arab", "local"],
+      ["Guide redaction memoire_BTS", "ressources/en/Guide_Redaction_Memoire_BTS Mme Maouche Meriem.pdf", "Guide rédaction memoire_BTS", "local"],
+    ["Guide redaction memoire_BTS Arab ", "ressources/en/Guide_Redaction_Memoire_BTS_Arabe.pdf", "Guide rédaction memoire_BTS Arab", "local"],
     ["Template Memoire BTS", "ressources/en/Template_Memoire_BTS Maouche Meriem.docx", "Template_Memoire_BTS Maouche Meriem", "local"],
     ],
     "Pratique": [
