@@ -143,13 +143,16 @@ const RES = {
   },
   ia: {
     "Cours": [
-      ["cours ", "ressources/ia/Programmation_Procedurale_Algorithmique_C.pptx", "cours power point", "local"]
+      ["cours ", "ressources/ia/Programmation_Procedurale_Algorithmique_C.pptx", "cours power point", "local"],
+      ["Architecteur problem somme en c ", "ressources/ia/architecteur problem somme en c.png", "architecteur problem somme en c", "local"],
+      ["Architecteur problem somme en c detaille ", "ressources/ia/architecteur problem somme en c detaille.png", "architecture problem somme en c detaille", "local"],
 
     ],
     "Documentation": [
          ["Guide en algorithmique et programmation en C", "ressources/ia/BTS Guide_Programmation_Procedurale_Algorithmique_C Maouche Meriem.pdf", "guide supplémentaire", "local"],
           ["Ressources ", "ressources/ia/Capture d'écran 2026-11-15 141011.png", "ressources platforme et logicils", "local"],
   ["Algolabindex ", "ressources/ia/index.html", "site pour tester algorithme", "local"],
+   
     ],
     "Pratique": [
  [" Série des exercices en Algo et C ", "ressources/ia/Série d'exercices Programmation procédurale en langage C.pdf", "série des exercices en Algo et C", "local"]
