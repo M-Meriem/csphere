@@ -144,8 +144,8 @@ const RES = {
   ia: {
     "Cours": [
       ["cours ", "ressources/ia/Programmation_Procedurale_Algorithmique_C.pptx", "cours power point", "local"],
-      ["Architecteur problem somme en c ", "ressources/ia/architecteur problem somme en c.png", "architecteur problem somme en c", "local"],
-      ["Architecteur problem somme en c detaille ", "ressources/ia/architecteur problem somme en c detaille.png", "architecture problem somme en c detaille", "local"],
+      ["Architecteur problem somme en c ", "ressources/ia/architecteur problem somme en c.png", "architecteur problem somme en c", "web"],
+      ["Architecteur problem somme en c detaille ", "ressources/ia/architecteur problem somme en c detaille.png", "architecture problem somme en c detaille", "web"],
 
     ],
     "Documentation": [
